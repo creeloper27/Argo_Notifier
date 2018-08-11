@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'subject_table.ui',
 # licensing of 'subject_table.ui' applies.
 #
-# Created: Sat Aug 11 17:13:54 2018
+# Created: Sat Aug 11 21:35:14 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -20,7 +20,7 @@ class Ui_subject_table(object):
         sizePolicy.setHeightForWidth(subject_table.sizePolicy().hasHeightForWidth())
         subject_table.setSizePolicy(sizePolicy)
         subject_table.setMinimumSize(QtCore.QSize(0, 0))
-        subject_table.setBaseSize(QtCore.QSize(1500, 1500))
+        subject_table.setBaseSize(QtCore.QSize(0, 0))
         subject_table.setWhatsThis("")
         self.gridLayout_3 = QtWidgets.QGridLayout(subject_table)
         self.gridLayout_3.setObjectName("gridLayout_3")
@@ -73,6 +73,7 @@ class Ui_subject_table(object):
         self.retranslateUi(subject_table)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), subject_table.accept)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), subject_table.reject)
+        QtCore.QObject.connect(self.tableWidget, QtCore.SIGNAL("itemChanged(QTableWidgetItem*)"), subject_table.update_subject_table)
         QtCore.QMetaObject.connectSlotsByName(subject_table)
 
     def retranslateUi(self, subject_table):

@@ -2,11 +2,12 @@ import argoapi
 import requests
 import json
 import sys
-from PySide2.QtWidgets import QApplication, QMainWindow, QSizePolicy, QSplitter, QDialog
-from PySide2.QtCore import Qt, QSize
+from PySide2.QtWidgets import QApplication, QMainWindow, QSizePolicy, QSplitter, QDialog, QTableWidgetItem
+from PySide2.QtCore import Qt, QSize, Slot
 from Main import Ui_MainWindow
 from subject_table import Ui_subject_table
 
+debug = 1
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     """docstring for MainWindow."""
@@ -30,20 +31,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 class subject_table(QDialog, Ui_subject_table):
 
+	day = ["lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"]
+
 	def __init__(self, parent=None):
 		super(subject_table, self).__init__(parent)
 		self.setupUi(self)
+		self.tableWidget.blockSignals(True);
 		self.load()
+		self.tableWidget.blockSignals(False);
 
 	def load(self):
 		#fa cose dopo aver caricato la finestra
 		#per togliere il "?" dalla finestra
 		self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-		subjects = json.load(open("subject_table.json"))
-		"""for x in range(1,7)
-				for y in range(1,7)
-				setItem(0, 1, new QTableWidgetItem("Hello"))"""
-		
+		self.subjects = json.loads(open("subject_table.json", encoding="utf-8").read())
+		for x in range(0,7):
+			for y in range(0,7):
+				if len(self.subjects[self.day[x]])-1>=y:
+					if debug:
+						print("self.day: {}, x: {}, y: {}, len(self.day[x]): {}, self.subjects[day[x]][y]: {}".format(self.day[x],x,y,len(self.day[x]),self.subjects[self.day[x]][y]))
+					self.tableWidget.setItem(y, x, QTableWidgetItem(self.subjects[self.day[x]][y]))
+
+
+	def update_subject_table(self, item):
+		if debug:
+			print("item: {}\n x: {}, y: {}, text: {}".format(item,item.column(),item.row(),item.text()))
+		for i in range(0,item.row()-(len(self.subjects[self.day[item.column()]])-1)):
+			self.subjects[self.day[item.column()]].append("")
+		if debug:
+			print("append*{}, write to: {},{}".format(item.row()-(len(self.subjects[self.day[item.column()]])-1),self.day[item.column()],item.row()))
+		self.subjects[self.day[item.column()]][item.row()]=item.text()
+		json.dump(self.subjects, open("subject_table.json", "w+", encoding="utf-8"), indent=4, sort_keys=True)
+
 
 class MainApp(QApplication):
 

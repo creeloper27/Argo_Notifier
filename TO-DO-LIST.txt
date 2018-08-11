@@ -6,3 +6,14 @@ add exam filter
 add importance level to homeworks
 aggiungere inizio/fine orari
 aggiungere possibilità di avere più materie nella stessa ora (ex. ita+storia dato che cambiano in base agli argomenti)
+
+programma che scarica i compiti dal registro, rileva gli esercizzi e le verificche nelle consegne e, guardando la tabella degli orari uploada su google calendar i compiti. (magari solo le verifiche)
+i compiti magari li mette su una lista a parte
+lista cose da fare con scadenze
+categorie compiti etc,
+avvisa  ...
+
+playlist -> txt/file-folder
+cose da fare -> txt/file-folder
+
+monitor status con calendario + altro
