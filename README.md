@@ -1,3 +1,3 @@
 # Argo_Notifier
 
-[english version of the readme](../blob/master/README_eng.md)
+[english version of the readme](../master/README_eng.md)
