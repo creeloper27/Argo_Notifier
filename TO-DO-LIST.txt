@@ -1,0 +1,6 @@
+add setup to enter installation location and add the credentials
+add menu to change subject table
+add settings to set stuff
+add desktop notifications
+add exam filter
+add importance level to homeworks
