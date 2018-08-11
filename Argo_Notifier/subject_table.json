@@ -1,64 +1,7 @@
-{
-    "domenica": [
-        "",
-        "ciao",
-        "",
-        "",
-        "hello",
-        "",
-        "ciao"
-    ],
-    "gioved\u00ec": [
-        "Matematica",
-        "Tecnologie e progettazione sistemi informatici e telecom.",
-        "Religione",
-        "Sistemi e reti",
-        "Lingua e Lettere Italiane",
-        "ni",
-        "ciao"
-    ],
-    "luned\u00ec": [
-        "nop",
-        "Informatica",
-        "Sistemi e reti",
-        "Lingua e Lettere Italiane",
-        "Lingua straniera Inglese",
-        "",
-        ""
-    ],
-    "marted\u00ec": [
-        "Lingua e Lettere Italiane",
-        "Storia, Cittadinanza e Costituzione",
-        "Informatica",
-        "Telecomunicazioni",
-        "Telecomunicazioni",
-        "mao"
-    ],
-    "mercoled\u00ec": [
-        "Lingua straniera Inglese",
-        "Lingua e Lettere Italiane",
-        "Telecomunicazioni",
-        "Informatica",
-        "Matematica",
-        "",
-        "ciao"
-    ],
-    "sabato": [
-        "Sistemi e reti",
-        "Sistemi e reti",
-        "Matematica",
-        "Lingua straniera Inglese",
-        "Tecnologie e progettazione sistemi informatici e telecom.",
-        "",
-        ""
-    ],
-    "venerd\u00ec": [
-        "Informatica",
-        "Informatica",
-        "Tecnologie e progettazione sistemi informatici e telecom.",
-        "Storia, Cittadinanza e Costituzione",
-        "Matematica",
-        "Scienze motorie e sportive",
-        "NO"
-    ]
-}
+{"lunedì": ["Informatica","Informatica","Sistemi e reti","Lingua e Lettere Italiane","Lingua straniera Inglese"],
+"martedì": ["Lingua e Lettere Italiane","Storia, Cittadinanza e Costituzione","Informatica","Telecomunicazioni","Telecomunicazioni"],
+"mercoledì": ["Lingua straniera Inglese","Lingua e Lettere Italiane","Telecomunicazioni","Informatica","Matematica"],
+"giovedì": ["Matematica","Tecnologie e progettazione sistemi informatici e telecom.","Religione","Sistemi e reti","Lingua e Lettere Italiane"],
+"venerdì": ["Informatica","Informatica","Tecnologie e progettazione sistemi informatici e telecom.","Storia, Cittadinanza e Costituzione","Matematica","Scienze motorie e sportive","Scienze motorie e sportive"],
+"sabato": ["Sistemi e reti","Sistemi e reti","Matematica","Lingua straniera Inglese","Tecnologie e progettazione sistemi informatici e telecom."],
+"domenica": []}

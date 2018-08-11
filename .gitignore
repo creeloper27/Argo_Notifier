@@ -4,6 +4,7 @@ google_calendar_credentials.json
 google_calendar_token.json
 
 # Byte-compiled / optimized / DLL files
+Argo_Notifier/__pycache__/
 __pycache__/
 *.py[cod]
 *$py.class
