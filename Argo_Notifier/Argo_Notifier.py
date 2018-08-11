@@ -37,6 +37,8 @@ class subject_table(QDialog, Ui_subject_table):
 
 	def load(self):
 		#fa cose dopo aver caricato la finestra
+		#per togliere il "?" dalla finestra
+		self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 		subjects = json.load(open("subject_table.json"))
 		"""for x in range(1,7)
 				for y in range(1,7)
