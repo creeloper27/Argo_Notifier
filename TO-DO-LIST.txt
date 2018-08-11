@@ -4,3 +4,5 @@ add settings to set stuff
 add desktop notifications
 add exam filter
 add importance level to homeworks
+aggiungere inizio/fine orari
+aggiungere possibilità di avere più materie nella stessa ora (ex. ita+storia dato che cambiano in base agli argomenti)
