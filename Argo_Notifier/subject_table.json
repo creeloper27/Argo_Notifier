@@ -1,7 +1,7 @@
-{ "lunedì": ["Informatica","Informatica","Sistemi e reti","Lingua e Lettere Italiane","Lingua straniera Inglese"],
+{"lunedì": ["Informatica","Informatica","Sistemi e reti","Lingua e Lettere Italiane","Lingua straniera Inglese"],
 "martedì": ["Lingua e Lettere Italiane","Storia, Cittadinanza e Costituzione","Informatica","Telecomunicazioni","Telecomunicazioni"],
 "mercoledì": ["Lingua straniera Inglese","Lingua e Lettere Italiane","Telecomunicazioni","Informatica","Matematica"],
 "giovedì": ["Matematica","Tecnologie e progettazione sistemi informatici e telecom.","Religione","Sistemi e reti","Lingua e Lettere Italiane"],
-"venerdì": ["Informatica","Informatica","Tecnologie e progettazione sistemi informatici e telecom.","Storia, Cittadinanza e Costituzione","Matematica","Scienze motorie e sportive", "settima": "Scienze motorie e sportive"],
+"venerdì": ["Informatica","Informatica","Tecnologie e progettazione sistemi informatici e telecom.","Storia, Cittadinanza e Costituzione","Matematica","Scienze motorie e sportive","Scienze motorie e sportive"],
 "sabato": ["Sistemi e reti","Sistemi e reti","Matematica","Lingua straniera Inglese","Tecnologie e progettazione sistemi informatici e telecom."],
 "domenica": []}

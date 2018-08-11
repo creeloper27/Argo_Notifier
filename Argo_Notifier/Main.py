@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'Main.ui',
 # licensing of 'Main.ui' applies.
 #
-# Created: Fri Aug 10 17:05:11 2018
+# Created: Sat Aug 11 17:10:11 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.open_subject_name_button = QtWidgets.QPushButton(self.centralwidget)
-        self.open_subject_name_button.setGeometry(QtCore.QRect(370, 220, 75, 23))
+        self.open_subject_name_button.setGeometry(QtCore.QRect(710, 520, 75, 23))
         self.open_subject_name_button.setObjectName("open_subject_name_button")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)

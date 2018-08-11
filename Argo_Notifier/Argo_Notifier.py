@@ -2,10 +2,10 @@ import argoapi
 import requests
 import json
 import sys
-from PySide2.QtWidgets import QApplication, QMainWindow, QSizePolicy, QSplitter, QMessageBox
+from PySide2.QtWidgets import QApplication, QMainWindow, QSizePolicy, QSplitter, QDialog
 from PySide2.QtCore import Qt, QSize
 from Main import Ui_MainWindow
-from subject_table import Ui_Dialog
+from subject_table import Ui_subject_table
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -25,10 +25,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     	pass
 
     def open_subject_table(self):
-    	self.window_subject_table = subject_table()
+    	self.window_subject_table = subject_table(self)
     	self.window_subject_table.show()
 
-class subject_table(QMessageBox, Ui_Dialog):
+class subject_table(QDialog, Ui_subject_table):
 
 	def __init__(self, parent=None):
 		super(subject_table, self).__init__(parent)
@@ -37,7 +37,7 @@ class subject_table(QMessageBox, Ui_Dialog):
 
 	def load(self):
 		#fa cose dopo aver caricato la finestra
-		subjects = json.load("subject_table.json")
+		subjects = json.load(open("subject_table.json"))
 		"""for x in range(1,7)
 				for y in range(1,7)
 				setItem(0, 1, new QTableWidgetItem("Hello"))"""
