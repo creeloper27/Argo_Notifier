@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'subject_table.ui',
 # licensing of 'subject_table.ui' applies.
 #
-# Created: Sun Aug 12 13:30:53 2018
+# Created: Sun Aug 12 14:48:23 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
