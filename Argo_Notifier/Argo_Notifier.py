@@ -52,8 +52,8 @@ class subject_table(QDialog, Ui_subject_table):
 						print("self.day: {}, x: {}, y: {}, len(self.day[x]): {}, self.subjects[day[x]][y]: {}".format(self.day[x],x,y,len(self.day[x]),self.subjects[self.day[x]][y]))
 					self.tableWidget.setItem(y, x, QTableWidgetItem(self.subjects[self.day[x]][y]))
 
-
-	def update_subject_table(self, item):
+	#edit the subject_table dictionary
+	def change_subject_table(self, item):
 		if debug:
 			print("item: {}\n x: {}, y: {}, text: {}".format(item,item.column(),item.row(),item.text()))
 		for i in range(0,item.row()-(len(self.subjects[self.day[item.column()]])-1)):
@@ -61,6 +61,9 @@ class subject_table(QDialog, Ui_subject_table):
 		if debug:
 			print("append*{}, write to: {},{}".format(item.row()-(len(self.subjects[self.day[item.column()]])-1),self.day[item.column()],item.row()))
 		self.subjects[self.day[item.column()]][item.row()]=item.text()
+	
+	#update the new subject_table dictionary to the json
+	def update_subject_table(self):
 		json.dump(self.subjects, open("subject_table.json", "w+", encoding="utf-8"), indent=4, sort_keys=True)
 
 

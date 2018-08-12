@@ -178,7 +178,7 @@
    <sender>tableWidget</sender>
    <signal>itemChanged(QTableWidgetItem*)</signal>
    <receiver>subject_table</receiver>
-   <slot>update_subject_table()</slot>
+   <slot>change_subject_table()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>201</x>
@@ -190,8 +190,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>subject_table</receiver>
+   <slot>update_subject_table()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>572</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>582</x>
+     <y>-15</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>update_subject_table()</slot>
+  <slot>change_subject_table()</slot>
  </slots>
 </ui>

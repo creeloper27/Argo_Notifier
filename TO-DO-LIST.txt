@@ -17,3 +17,5 @@ playlist -> txt/file-folder
 cose da fare -> txt/file-folder
 
 monitor status con calendario + altro
+
+add PySide2 to dependecies

@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'subject_table.ui',
 # licensing of 'subject_table.ui' applies.
 #
-# Created: Sat Aug 11 21:45:06 2018
+# Created: Sun Aug 12 13:30:53 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -73,7 +73,8 @@ class Ui_subject_table(object):
         self.retranslateUi(subject_table)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), subject_table.accept)
         QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), subject_table.reject)
-        QtCore.QObject.connect(self.tableWidget, QtCore.SIGNAL("itemChanged(QTableWidgetItem*)"), subject_table.update_subject_table)
+        QtCore.QObject.connect(self.tableWidget, QtCore.SIGNAL("itemChanged(QTableWidgetItem*)"), subject_table.change_subject_table)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), subject_table.update_subject_table)
         QtCore.QMetaObject.connectSlotsByName(subject_table)
 
     def retranslateUi(self, subject_table):
