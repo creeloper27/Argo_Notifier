@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'SettingsWindow.ui',
 # licensing of 'SettingsWindow.ui' applies.
 #
-# Created: Tue Aug 14 12:59:03 2018
+# Created: Tue Aug 14 16:33:16 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
