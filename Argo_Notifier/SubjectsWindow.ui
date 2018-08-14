@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>subject_table</class>
- <widget class="QDialog" name="subject_table">
+ <class>SubjectsWindow</class>
+ <widget class="QDialog" name="SubjectsWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -145,7 +145,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>subject_table</receiver>
+   <receiver>SubjectsWindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -161,7 +161,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>subject_table</receiver>
+   <receiver>SubjectsWindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -177,7 +177,7 @@
   <connection>
    <sender>tableWidget</sender>
    <signal>itemChanged(QTableWidgetItem*)</signal>
-   <receiver>subject_table</receiver>
+   <receiver>SubjectsWindow</receiver>
    <slot>change_subject_table()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -193,7 +193,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>subject_table</receiver>
+   <receiver>SubjectsWindow</receiver>
    <slot>update_subject_table()</slot>
    <hints>
     <hint type="sourcelabel">

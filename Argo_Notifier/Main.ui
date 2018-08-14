@@ -14,24 +14,24 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="open_subject_name_button">
+   <widget class="QPushButton" name="open_subject_name_Button">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>610</x>
       <y>510</y>
       <width>161</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Open Subject Table</string>
+     <string>Open subjects_window</string>
     </property>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>390</y>
+      <y>340</y>
       <width>160</width>
       <height>80</height>
      </rect>
@@ -95,6 +95,19 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="open_settings_Button">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>460</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open settings_window</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -109,5 +122,42 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>open_subject_name_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_subjects_window()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>629</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>open_settings_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open_settings_window()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>509</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>461</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>open_subjects_window()</slot>
+  <slot>open_settings_window()</slot>
+ </slots>
 </ui>
