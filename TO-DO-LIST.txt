@@ -1,23 +1,14 @@
 add setup to enter installation location and add the credentials
-add menu to change subject table
-add settings to set stuff
-add desktop notifications
+add notifications: desktop, puah, email etc (use the google calendar events notifications)
 add exam filter
 add importance level to homeworks
-aggiungere inizio/fine orari
-aggiungere possibilità di avere più materie nella stessa ora (ex. ita+storia dato che cambiano in base agli argomenti)
-
-programma che scarica i compiti dal registro, rileva gli esercizzi e le verificche nelle consegne e, guardando la tabella degli orari uploada su google calendar i compiti. (magari solo le verifiche)
-i compiti magari li mette su una lista a parte
+use logging sistem for debug
+add auto-folg plugin to hide if debug [...] in the editor
+aggiungere possibilità di avere più materie nella stessa ora (ex. ita+storia dato che cambiano in base agli argomenti) i compiti magari li mette su una lista a parte
 lista cose da fare con scadenze
 categorie compiti etc,
-avvisa  ...
 
 playlist -> txt/file-folder
 cose da fare -> txt/file-folder
 
 monitor status con calendario + altro
-
-add PySide2 to dependecies
-
-use scheduler
