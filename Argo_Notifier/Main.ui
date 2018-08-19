@@ -108,6 +108,19 @@
      <string>Open settings_window</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>510</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Update NOW</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -146,8 +159,8 @@
    <slot>open_settings_window()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>460</x>
-     <y>509</y>
+     <x>610</x>
+     <y>511</y>
     </hint>
     <hint type="destinationlabel">
      <x>461</x>
@@ -155,9 +168,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>app_update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>495</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>open_subjects_window()</slot>
   <slot>open_settings_window()</slot>
+  <slot>app_update()</slot>
  </slots>
 </ui>

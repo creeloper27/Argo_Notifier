@@ -1,11 +1,20 @@
+#!/usr/bin/env python
+# -*- coding: utf-8
+
+"""
+DEBUG: 2018-08-18T17:13:01.616764Z
+utcnow().isoformat()
+"""
+
 from __future__ import print_function
+from os import system
 import datetime
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
+SCOPES = 'https://www.googleapis.com/auth/calendar'
 
 def main():
     """Shows basic usage of the Google Calendar API.
@@ -20,6 +29,7 @@ def main():
 
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+    print("DEBUG:", now)
     print('Getting the upcoming 10 events')
     events_result = service.events().list(calendarId='primary', timeMin=now,
                                         maxResults=10, singleEvents=True,
@@ -31,6 +41,9 @@ def main():
     for event in events:
         start = event['start'].get('dateTime', event['start'].get('date'))
         print(start, event['summary'])
+
+    system("pause")
+
 
 if __name__ == '__main__':
     main()

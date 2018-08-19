@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'Main.ui',
 # licensing of 'Main.ui' applies.
 #
-# Created: Tue Aug 14 16:33:16 2018
+# Created: Sun Aug 19 10:10:00 2018
 #      by: pyside2-uic  running on PySide2 5.11.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -52,6 +52,9 @@ class Ui_MainWindow(object):
         self.open_settings_Button = QtWidgets.QPushButton(self.centralwidget)
         self.open_settings_Button.setGeometry(QtCore.QRect(610, 460, 161, 31))
         self.open_settings_Button.setObjectName("open_settings_Button")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(420, 510, 111, 31))
+        self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
@@ -64,6 +67,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QObject.connect(self.open_subject_name_Button, QtCore.SIGNAL("clicked()"), MainWindow.open_subjects_window)
         QtCore.QObject.connect(self.open_settings_Button, QtCore.SIGNAL("clicked()"), MainWindow.open_settings_window)
+        QtCore.QObject.connect(self.pushButton, QtCore.SIGNAL("clicked()"), MainWindow.app_update)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -78,4 +82,5 @@ class Ui_MainWindow(object):
         self.label_3.setText(QtWidgets.QApplication.translate("MainWindow", "Calendar_Servers:", None, -1))
         self.label_4.setText(QtWidgets.QApplication.translate("MainWindow", "Argo_Servers", None, -1))
         self.open_settings_Button.setText(QtWidgets.QApplication.translate("MainWindow", "Open settings_window", None, -1))
+        self.pushButton.setText(QtWidgets.QApplication.translate("MainWindow", "Update NOW", None, -1))
 

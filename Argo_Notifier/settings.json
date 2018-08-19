@@ -1,5 +1,5 @@
 {
     "auto_update": {
-        "update_interval": 1
+        "update_interval": 10
     }
 }
