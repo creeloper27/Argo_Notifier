@@ -12,3 +12,6 @@ playlist -> txt/file-folder
 cose da fare -> txt/file-folder
 
 monitor status con calendario + altro
+
+usare partial responses (con fields) e le patch per ricevere solo i dati neccessari
+usare calendari secondari e condivisi (es. calendario avvisi verifiche di classe che può essere condiviso anche agli altri)
