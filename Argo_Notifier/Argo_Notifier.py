@@ -21,6 +21,11 @@ from apscheduler.schedulers.background import BackgroundScheduler
 #from apscheduler.schedulers.qt import QtScheduler
 
 
+'''
+
+
+'''
+
 class MainWindow(QMainWindow, Ui_MainWindow):
     """docstring for MainWindow."""
 
@@ -87,7 +92,7 @@ class SubjectsWindow(QDialog, Ui_SubjectsWindow):
             print("append*{}, write to: {},{}".format(item.row()-(len(app.subjects[app.day[item.column()]])-1),app.day[item.column()],item.row()))
         app.subjects[app.day[item.column()]][item.row()]=item.text()
 
-    #update the new subject_table dictionary to the json
+    # update the new subject_table dictionary to the json
     def update_subject_table(self):
         json.dump(app.subjects, open("subject_table.json", "w+", encoding="utf-8"), indent=4, sort_keys=True)
 
@@ -95,7 +100,7 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
     def __init__(self, parent=None):
         super(SettingsWindow, self).__init__(parent)
         self.setupUi(self)
-        #FIXARE BLOCK SIGNALS PER TUTTI I WIDGET (self.block non credo vada)
+        # FIXARE BLOCK SIGNALS PER TUTTI I WIDGET (self.block non credo vada)
         self.blockSignals(True);
         self.load()
         self.blockSignals(False);
@@ -128,6 +133,8 @@ class SettingsWindow(QDialog, Ui_SettingsWindow):
 class MainApp(QApplication):
 
     def __init__(self, *args, **kwargs):
+        import os
+
         self.debug = True
         try:
             self.settings = json.loads(open("settings.json", encoding="utf-8").read())
@@ -160,22 +167,28 @@ class MainApp(QApplication):
         self.tests = self.update_argo()
         #aggiungo il giorno ai dizionary dei test
         for test in self.tests:
-            date = test["date"].split("-")
-            thatdate = datetime.date(year=int(date[0]), month=int(date[1]), day=int(date[2]))
-            test["day"] = app.day[thatdate.weekday()]
+            if test["subject"]=="Lab.-tec.sist.i&t":
+                test["subject"]="Tecnologie e progettazione sistemi informatici e telecom."
+            if test["subject"]=="Lab.-informatica":
+                test["subject"]="Informatica"
+            if test["subject"]=="Lab.-sistemi":
+                test["subject"]="Sistemi e reti"
+
+            test["day"] = app.day[test["date"].weekday()]
         if self.debug:
-            print('{} Traceback {} per {} cattai {}'.format('Date', 'Day', 'Subject', 'Description'))
+            # non ha senso
+            print('| {} | {} | {} | {} |\n'.format('Date', 'Day', 'Subject', 'Description'))
             for z in range(0,len(self.tests)):
-                print('{} | {} | {} | {}'.format(self.tests[z]["date"], self.tests[z]["day"], self.tests[z]["subject"], self.tests[z]["description"]))
+                print('| {} | {} | {} | {} |'.format(self.tests[z]["date"], self.tests[z]["day"], self.tests[z]["subject"], self.tests[z]["description"].replace("\n"," ")))
 
         self.update_calendar(self.tests)
 
     def update_argo(self):
         if self.argo_token:
-            argo = argoapi.ArgoUser(cod_min=self.argo_credentials["school_code"],
+            argo = argoapi.ArgoUser(schoolcode=self.argo_credentials["school_code"],
                                     token=self.argo_token["token"])
         elif self.argo_credentials:
-            argo = argoapi.ArgoUser(cod_min=self.argo_credentials["school_code"],
+            argo = argoapi.ArgoUser(schoolcode=self.argo_credentials["school_code"],
                                     username=self.argo_credentials["username"],
                                     password=self.argo_credentials["password"])
         else:
@@ -185,15 +198,13 @@ class MainApp(QApplication):
         return tests
 
     def filter_tests(self, data):
-        """
-            Filter data to get all tests using AAFT (Advanced Algorithm For detecting Tests)
-        """
+        """Filter data to get all tests using AAFT (Advanced Algorithm For detecting Tests)."""
         tests = []
         for homework in data:
-            description = homework["desCompiti"]
-            #creare algoritmo per individuare la descrizione della verifica e separarla dal resto, etc.
-            if description.lower().find("verifica") != -1:
-                tests.append({"date" : homework["datGiorno"], "day" : None, "subject" : homework["desMateria"], "description" : homework["desCompiti"]})
+            description = homework["description"]
+            # creare algoritmo per individuare la descrizione della verifica e separarla dal resto, etc.
+            if ((description.lower().find("verifica") != -1) and (description.lower().find("recupero") == -1) and (description.lower().find("autoverifica") == -1) and (description.lower().find("previsione") == -1)):
+                tests.append({"date" : homework["date"], "day" : None, "subject" : homework["subject"], "description" : homework["description"]})
         return tests
 
     def update_calendar(self, tests):
@@ -209,13 +220,13 @@ class MainApp(QApplication):
         for test in tests:
             try:
                 start_hour, end_hour = app.subjects["orari"][app.subjects[test["day"]].index(test["subject"])]
-                start = datetime.datetime.strptime(test["date"] + "-" + start_hour,
+                strdate = test["date"].strftime("%Y-%m-%d-")
+                start = datetime.datetime.strptime(strdate + start_hour,
                                                    "%Y-%m-%d-%H-%M").isoformat() + 'Z'
-                end = datetime.datetime.strptime(test["date"] + "-" + end_hour,
+                end = datetime.datetime.strptime(strdate + end_hour,
                                                    "%Y-%m-%d-%H-%M").isoformat() + 'Z'
                 if app.debug:
-                    print("start: ", start)
-                    print("end: ", end)
+                    print("\nStart: ", start, "End: ", end)
                 events_result = service.events().list(calendarId='primary', timeMin=start, timeMax=end,
                                                       singleEvents=True, maxResults=10,
                                                       orderBy='startTime').execute()
@@ -247,8 +258,9 @@ class MainApp(QApplication):
                         start = event['start'].get('dateTime', event['start'].get('date'))
                     print(start, event['summary'])
 
-            except:
-                print("Subject not found")
+            except Exception as e:
+                print("Subject not found", e)
+                raise e
 
 if __name__ == "__main__":
     app = MainApp(sys.argv)
