@@ -203,7 +203,7 @@ class MainApp(QApplication):
         for homework in data:
             description = homework["description"]
             # creare algoritmo per individuare la descrizione della verifica e separarla dal resto, etc.
-            if ((description.lower().find("verifica") != -1) and (description.lower().find("recupero") == -1) and (description.lower().find("autoverifica") == -1) and (description.lower().find("previsione") == -1)):
+            if (((description.lower().find("verifica") != -1) or (description.lower().find("compito") != -1)) and (description.lower().find("recupero") == -1) and (description.lower().find("autoverifica") == -1) and (description.lower().find("previsione") == -1)):
                 tests.append({"date" : homework["date"], "day" : None, "subject" : homework["subject"], "description" : homework["description"]})
         return tests
 
