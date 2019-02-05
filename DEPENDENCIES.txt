@@ -1,0 +1,6 @@
+google-api-python-client
+APScheduler
+httplib2
+numpy
+oauth2client
+PySide2

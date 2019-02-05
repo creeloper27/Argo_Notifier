@@ -1,7 +1,5 @@
 #other stuff
-argo_credentials.json
-google_calendar_credentials.json
-google_calendar_token.json
+Data/Credentials/*
 
 # Byte-compiled / optimized / DLL files
 Argo_Notifier/__pycache__/

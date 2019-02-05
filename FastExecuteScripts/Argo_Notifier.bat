@@ -1,4 +1,4 @@
 @echo off
-python "ui to py.py"
+cd ../Code
 python Argo_Notifier.py
 pause

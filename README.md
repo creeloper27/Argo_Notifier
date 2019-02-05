@@ -1,5 +1,5 @@
 # Argo_Notifier
 
-[english version of the readme](../master/README_eng.md)
+[italian version of the readme](../master/README.md)
 
-Argo_Notifier è un progetto open-source, l'obbiettivo principale è notificare gli utenti dei compiti/verifiche (postate su argo) creando eventi nel calendario di google e notifiche da desktop.
+Argo_Notifier is an open-source project, the main goal is to notify users of homeworks/exams (posted on argo) by creating events on the google calendar and desktop notiications.
